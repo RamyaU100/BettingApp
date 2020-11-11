@@ -20,9 +20,9 @@
 </div>
  <div class="abc">
     <label for="Win">Win</label>
-    <input type="text"  name="win" value = "<%= session[:win] %>" ><br>
+    <input type="text"  name="win" value ="<%= session[:win] %>" ><br>
     <label for="lost">Lost</label>
-    <input type="text"  name="lost" value = "<%= session[:lost] %>" ><br>
+    <input type="text"  name="lost" value ="<%= session[:lost] %>" ><br>
 
     <label for="profit">Profit</label>
     <input type="text"  value ="<%= session[:win] %> - <%= session[:lost] %>" ><br><br>
@@ -32,10 +32,10 @@
 
 <div style=padding-top:0px;margin-top:0px;width:96%>
 <label for="total_win">Total Win</label>
-<input type="text"  name="total_win" value = "<%= session[:total_win] %>" >
+<input type="text"  name="total_win" value ="<%= session[:total_win] %>" >
 
 <label for="total_lost">Total Lost</label>
-<input type="text"  name="total_lost" value = "<%= session[:total_lost] %>" >
+<input type="text"  name="total_lost" value ="<%= session[:total_lost] %>" >
 
 <label for="total_profit">Total Profit</label>
 <input type="text"  value ="<%= session[:total_win] %> - <%= session[:total_lost] %>" >
