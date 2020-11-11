@@ -83,5 +83,5 @@ get '/logout' do
     session[:total_lost]+= session[:lost]
     id.update(:Win=>session[:total_win],:Lost=>session[:total_lost])
     erb :login
-    redirect '/login'
+    redirect '/'
 end
