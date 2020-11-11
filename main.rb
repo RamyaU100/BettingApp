@@ -13,7 +13,7 @@ class Bet
     property :Win, Integer
     property :Lost, Integer
 end
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!
 DataMapper.finalize
 
 configure do
