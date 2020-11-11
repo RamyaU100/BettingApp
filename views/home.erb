@@ -25,7 +25,7 @@
     <input type="text"  name="lost" value ="<%= session[:lost] %>" ><br>
 
     <label for="profit">Profit</label>
-    <input type="text"  value ="<%= session[:win] %> - <%= session[:lost] %>" ><br><br>
+    <input type="text"  value ="<%= session[:win]-session[:lost]%>" ><br><br>
 
 </div>
 
@@ -38,7 +38,7 @@
 <input type="text"  name="total_lost" value ="<%= session[:total_lost] %>" >
 
 <label for="total_profit">Total Profit</label>
-<input type="text"  value ="<%= session[:total_win] %> - <%= session[:total_lost] %>" >
+<input type="text"  value ="<%= session[:total_win]-session[:total_lost]%>" >
 
 </div>
 
