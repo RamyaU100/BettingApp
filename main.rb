@@ -67,7 +67,7 @@ post '/bet' do
     number = params[:number].to_i
     roll = rand(6) + 1
     if number == roll
-      session[:win] += (stake*10)
+      session[:win] += (stake*30)
       erb :home
     else
        session[:lost] += stake
