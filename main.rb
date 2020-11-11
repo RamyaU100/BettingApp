@@ -10,8 +10,8 @@ class Bet
     property :User_id, Serial
     property :User_name, String
     property :Password, String
-    property :Win, Integer, :default , 0
-    property :Lost, Integer, :default, 0
+    property :Win, Integer, :default => 0
+    property :Lost, Integer, :default => 0
 end
 DataMapper.auto_upgrade!
 DataMapper.finalize
