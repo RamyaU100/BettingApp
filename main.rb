@@ -3,15 +3,15 @@ require 'dm-core'
 require 'dm-migrations'
 
 enable 'sessions'
-DataMapper.setup(:default,ENV['DATABASE_URL']||"sqlite3://#{Dir.pwd}/gambling.db")
+DataMapper.setup(:default,ENV['DATABASE_URL']||"sqlite3://#{Dir.pwd}/betgamble.db")
 
 class Bet
     include DataMapper::Resource
     property :User_id, Serial
     property :User_name, String
     property :Password, String
-    property :Win, Integer
-    property :Lost, Integer
+    property :Win, Integer, :default , 0
+    property :Lost, Integer, :default, 0
 end
 DataMapper.auto_upgrade!
 DataMapper.finalize
@@ -22,11 +22,11 @@ end
 
 
 configure :development do
-	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/gambling.db")
+	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/betgamble.db")
 end
 
 configure :development, :test do
-	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/gambling.db")
+	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/betgamble.db")
 end
 
 configure :production do
@@ -83,5 +83,5 @@ get '/logout' do
     session[:total_lost]+= session[:lost]
     id.update(:Win=>session[:total_win],:Lost=>session[:total_lost])
     erb :login
-    redirect '/'
+    redirect '/login'
 end
